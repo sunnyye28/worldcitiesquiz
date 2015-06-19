@@ -83,9 +83,18 @@
 			</div>
 		</form>
 
-			
+		<div id="quiz-results-output">
+		</div>
 
 	<script>
+		//creating function to print to page in quiz results section
+		var html;	
+
+		function print(message){
+			var outputDiv = document.getElementById('quiz-results-output')
+				outputDiv.innerHTML = message;
+		}	
+
 		//creating array 'questionsList' with all the questions asked
 		var quizForm = document.getElementById('quiz-form');
 		var labelsList = quizForm.getElementsByTagName('label');
@@ -137,12 +146,18 @@
 					questionsAnsweredIncorrect.push(i+1); 
 				}
 			}	
-			alert("You got " + numberCorrect + " questions correct and " + numberIncorrect + " questions wrong.");
-			alert('Questions you answered correctly: ' + questionsAnsweredCorrect.join());
+			//alert("You got " + numberCorrect + " questions correct and " + numberIncorrect + " questions wrong.");
+			//alert('Questions you answered correctly: ' + questionsAnsweredCorrect.join());
+
+
+			html = "You got " + numberCorrect + " questions correct and " + numberIncorrect + " questions wrong.<br/>";
+			html += "Questions you answered correctly: " + questionsAnsweredCorrect.join() + "<br/>";
 			if (questionsAnsweredIncorrect.length != 0){
-				alert('Questions you answered incorrectly: ' + questionsAnsweredIncorrect.join());
+				html += "Questions you answered incorrectly: " + questionsAnsweredIncorrect.join();
+				}
+			print(html);
 			}
-		}
+		//}
 		
 	</script>
 	</div>
