@@ -1,0 +1,1 @@
+This is a practice exercise to create a page which is a quiz on world cities. The user has to enter in their answer, and when the button is clicked, the answers are checked and results for the number of correct and incorrect answers are given.
